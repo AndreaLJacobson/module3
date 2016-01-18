@@ -85,8 +85,6 @@ public class EarthquakeCityMap extends PApplet {
 	    	// PointFeatures also have a getLocation method
 	    }
 	    
-	    // Here is an example of how to use Processing's color method to generate 
-	    // an int that represents the color yellow.  
 	    int yellow = color(255, 255, 0);
 	    int blue = color(0,0,205);
 	    int red = color(220,20,60);
@@ -107,34 +105,31 @@ public class EarthquakeCityMap extends PApplet {
 		    	//  Minor earthquakes (less than magnitude 4.0) will have blue markers and be small.
 		        //	Light earthquakes (between 4.0-4.9) will have yellow markers and be medium.
 		    	//  Moderate and higher earthquakes (5.0 and over) will have red markers and be largest.
-		    	/* ****
+		    	
 		    	if(mag < 4.0)
 		    	{
 		    		smp.setColor(blue);
-		    		smp.setRadius(2);
+		    		smp.setRadius(6);
 		    	}
 		    	else if(mag < 5.0)
 		    	{
 		    		smp.setColor(yellow);
-		    		smp.setRadius(4);
+		    		smp.setRadius(8);
 		    	}
 		    	else
 		    	{
 		    		smp.setColor(red);
-		    		smp.setRadius(6);
+		    		smp.setRadius(10);
 		    	}
-		    	*** */
+		    
 	    		markers.add(smp);
 	    		System.out.println("Marker " + i+ " location: " + markers.get(i).getLocation().toString());
 	    	}//end for loop creating markers
 		    
-	    	/*for(Marker marker: markers)
+	    	for(Marker marker: markers)
 		    {
-		    	if(marker.get)
-		    	marker.setColor(yellow);
 		    	map.addMarkers(marker);
-		    }//end loop to set marker color and size
-		    */
+		    }
 		    	
 	}//end setup
 		
@@ -160,7 +155,31 @@ public class EarthquakeCityMap extends PApplet {
 	private void addKey() 
 	{	
 		// Remember you can use Processing's graphics methods here
-		rect(30, 40, 55, 55, 7);
+		fill(255,255,255);
+		rect(30, 40, 150, 200, 7);
+		
+		fill(0);
+		textAlign(LEFT, CENTER);
+		textSize(14);
+		text("Earthquake Key", 40, 70 );
+		textSize(12);
+		text("By Magnitude", 40, 85 );
+		
+		fill(0,0,205);
+		ellipse(50, 100, 6, 6);
+		fill(255, 255, 0);
+		ellipse(50, 130, 8, 8);
+		fill(220,20,60);
+		ellipse(50, 160, 10, 10);
+		
+		textSize(12);
+		String a = "Below 4.0";
+		text(a, 75, 100);
+		String b = "4.0+";
+		text(b, 75, 130);
+		String c = "5.0+";
+		text(c, 75, 160);
+		
 		
 	
 	}
